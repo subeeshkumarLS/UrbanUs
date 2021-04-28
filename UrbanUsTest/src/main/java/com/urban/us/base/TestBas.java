@@ -20,7 +20,7 @@ public class TestBas {
 		try {
 			prop = new Properties();
 			FileInputStream io = new FileInputStream(
-					"C:\\Users\\Lenovo\\eclipse-workspace\\UrbanUsTest\\src\\main\\java\\com\\urban\\us\\config\\conf.properties");
+					"C:\\Users\\Lenovo\\git\\UrbanUs\\UrbanUsTest\\src\\main\\java\\com\\urban\\us\\config\\conf.properties");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -30,19 +30,16 @@ public class TestBas {
 	}
 
 	public static void init() {
-		// String browserName = prop.getProperty("browser");
-		// if(browserName.equals("chrome")) {
 		System.setProperty("webdriver.chrome.driver", "D:\\crm2\\chromedriver.exe");
 
 		driver = new ChromeDriver();
-		// }
+
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Testut.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(Testut.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
-		// driver.get(prop.getProperty("url"));
 		driver.get("https://actyv-invest-portal.dev.actyv.com/login");
 	}
 

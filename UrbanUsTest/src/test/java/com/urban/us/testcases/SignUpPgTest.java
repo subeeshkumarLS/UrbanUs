@@ -234,7 +234,7 @@ public class SignUpPgTest extends TestBas {
 
 	}
 	@Test(priority = 31)
-	public void submitAllDetailsTest() {
+	public void submitAllDetailsTest() throws InterruptedException {
 		sign.validatePassTestCases();
 		sign.ValidatePassedCases();
 		sign.submitAllDetails();

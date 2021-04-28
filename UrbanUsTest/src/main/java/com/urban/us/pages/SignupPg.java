@@ -16,8 +16,8 @@ public class SignupPg extends TestBas {
 	}
 
 	String url = "https://actyv-invest-portal.dev.actyv.com/startup/registration/"
-			+ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImxqN3d3NDAyMTQiLCJvcmdhbml6YXRpb24iOiI2MDNhM2U1ZDBmMTkxOTIwNWY3YzJlMTMiLCJpYXQiOjE2MTk0NTc1OTYsImV4cCI6MTYxOTYzMDM5Nn0."
-			+ "Q4gd2RqZwqnEz7-NTBJRY_1vVBayMr9RBc-xHblA51k";
+			+ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImdnY3Q5YXV1bXByIiwib3JnYW5pemF0aW9uIjoiNjAzYTNlNWQwZjE5MTkyMDVmN2MyZTEzIiwiaWF0IjoxNjE5NTQzNDgwLCJleHAiOjE2MTk3MTYyODB9._"
+			+ "25-2eh3ydr58jxjpudheCGIanMAhG4qHA60d7GRLBA";
 
 	public void validateFirstName() {
 		driver.get(url);
@@ -229,7 +229,7 @@ public class SignupPg extends TestBas {
 		driver.findElement(By.xpath("//button[text()='Submit']")).click();
 	}
 
-	public void submitAllDetails() {
+	public void submitAllDetails() throws InterruptedException {
 		Select country = new Select(driver.findElement(By.name("country")));
 		country.selectByVisibleText("India");
 		Select state = new Select(driver.findElement(By.name("state")));
@@ -242,10 +242,13 @@ public class SignupPg extends TestBas {
 		driver.findElement(By.name("ceoPhone")).sendKeys("1515152525");
 		driver.findElement(By.name("ceoEmail")).sendKeys("peter@gmail.com");
 		WebElement UploadFile = driver.findElement(By.name("pitchDeck"));
-		UploadFile.sendKeys("C:\\Users\\Lenovo\\Desktop\\doc.pdf");
+		UploadFile.sendKeys("E:\\Actyv Project\\HelloPitch.pdf");
 		WebElement UploadImage = driver.findElement(By.name("companyLogo"));
 		UploadImage.sendKeys("C:\\Users\\Lenovo\\Desktop\\images.png");
 		driver.findElement(By.xpath("//button[text()='Submit']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[text()='Submit']")).click();
+		
 
 	}
 
